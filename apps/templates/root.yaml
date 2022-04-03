@@ -10,9 +10,9 @@ spec:
   source:
     repoURL: https://github.com/droeder/argocd-root
     targetRevision: HEAD
-    # path: echo-server
-    # directory:
-    #   recurse: true
+    path: apps/
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd-root # namespace we created
