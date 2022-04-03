@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-root # name of the Argo CD application
+  name: root # name of the Argo CD application
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -15,7 +15,7 @@ spec:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd-root # namespace we created
+    namespace: root
   syncPolicy:
     automated:
       prune: false
