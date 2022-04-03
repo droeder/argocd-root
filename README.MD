@@ -1,0 +1,3 @@
+TODO:
+
+- keycloak operator installation
