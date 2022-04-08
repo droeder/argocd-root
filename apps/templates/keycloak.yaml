@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: keycloak
-  namespace: default
+  namespace: keycloak
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: keycloak
   project: default
   source:
     chart: keycloak
