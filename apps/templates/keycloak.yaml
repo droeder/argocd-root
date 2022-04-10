@@ -13,14 +13,14 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: keycloak
   project: default
   source:
     chart: keycloak
     repoURL: https://github.com/bitnami/charts/tree/master/bitnami/keycloak
     targetRevision: 7.1.12
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: keycloak
   syncPolicy:
     automated:
       prune: true
