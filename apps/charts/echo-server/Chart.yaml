@@ -1,0 +1,4 @@
+apiVersion: v2
+description: echo-server
+name: echo-server
+version: 0.0.1
