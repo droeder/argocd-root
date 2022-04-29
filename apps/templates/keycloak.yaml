@@ -21,7 +21,7 @@ spec:
     targetRevision: 7.1.18
   destination:
     server: https://kubernetes.default.svc
-    namespace: keycloak
+    namespace: keycloak2
   syncPolicy:
     automated:
       prune: true
