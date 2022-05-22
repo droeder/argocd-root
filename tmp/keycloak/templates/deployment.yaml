@@ -18,7 +18,8 @@ spec:
     chart: keycloak
     repoURL: https://charts.bitnami.com/bitnami
     # targetRevision: HEAD
-    targetRevision: 7.1.18
+    # targetRevision: 7.1.18
+    targetRevision: 8.0.0
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
