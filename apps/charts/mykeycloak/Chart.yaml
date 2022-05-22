@@ -1,6 +1,6 @@
 apiVersion: v2
-description: keycloak
-name: keycloak
+description: mykeycloak
+name: mykeycloak
 version: 0.0.1
 dependencies:
   - name: keycloak
