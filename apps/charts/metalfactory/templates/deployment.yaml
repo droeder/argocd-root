@@ -1,0 +1,22 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+ name: metalfactory
+ namespace: {{ .Values.namespace }}
+spec: 
+ replicas: 1 
+ selector: 
+  matchLabels: 
+    app: metalfactory
+ template: 
+  metadata: 
+    labels: 
+      app: metalfactory
+  spec: 
+    containers: 
+      - name: metalfactory
+        image: ghcr.io/droeder/metalfactory:v.0.0.1
+        ports: 
+          - name: http-port 
+            containerPort: 5000
+
