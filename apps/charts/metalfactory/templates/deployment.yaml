@@ -17,6 +17,8 @@ spec:
   metadata: 
     labels: 
       app: metalfactory
+      prometheus.io/scrape: 'true'
+      
   spec: 
     containers: 
       - name: metalfactory
