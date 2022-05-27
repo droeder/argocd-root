@@ -2,3 +2,8 @@ apiVersion: v2
 description: Root application
 name: root
 version: 0.0.1
+dependencies:
+  - name: echo-server
+    condition: echo-server.enabled
+  - name: metalfactory
+    condition: metalfactory.enabled
