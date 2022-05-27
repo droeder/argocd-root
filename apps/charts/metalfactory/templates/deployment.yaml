@@ -3,10 +3,12 @@ kind: Deployment
 metadata: 
  name: metalfactory
  namespace: default
+ annotations: 
+  prometheus.io/scrape: "true"
  labels:
   prometheus.io/scrape: "true"
-  prometheus.io/path: "/metrics"
-  prometheus.io/port: "80"
+  # prometheus.io/path: "/metrics"
+  # prometheus.io/port: "80"
 
 spec: 
  replicas: 1 
@@ -14,12 +16,14 @@ spec:
   matchLabels: 
     app: metalfactory
  template: 
-  metadata: 
+  metadata:
+    annotations: 
+      prometheus.io/scrape: "true"
     labels: 
       app: metalfactory
       prometheus.io/scrape: "true"
-  prometheus.io/path: "/metrics"
-  prometheus.io/port: "80"
+      prometheus.io/path: "/metrics"
+      prometheus.io/port: "80"
       
   spec: 
     containers: 
