@@ -18,7 +18,7 @@ spec:
   spec: 
     containers: 
       - name: metalclient
-        image: ghcr.io/droeder/metalclient:v0.0.1
+        image: ghcr.io/droeder/metalclient:v0.0.2
         # ports: 
         #   - name: http-port 
         #     containerPort: 5000
