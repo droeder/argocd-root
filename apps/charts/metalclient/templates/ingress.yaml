@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: metalfactory
+  name: metalclient
   namespace: default
   annotations:
     kubernetes.io/ingress.class: "nginx"
@@ -9,14 +9,13 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
 spec:
   rules:
-  - host: metalfactory.172.18.0.200.nip.io
-  # - host: metalfactory.ingress.local
+  - host: metalclient.172.18.0.200.nip.io
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: metalfactory
+            name: metalclient
             port:
               number: 80

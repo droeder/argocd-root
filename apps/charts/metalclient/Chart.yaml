@@ -1,4 +1,4 @@
 apiVersion: v2
-description: metalfactory
-name: metalfactory
+description: metalclient
+name: metalclient
 version: 0.0.1
