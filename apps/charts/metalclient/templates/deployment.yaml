@@ -1,0 +1,25 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+ name: metalclient
+ namespace: default
+spec: 
+ replicas: 1 
+ selector: 
+  matchLabels: 
+    app: metalclient
+ template: 
+  metadata:
+    annotations: 
+      prometheus.io/scrape: "true"
+    labels: 
+      app: metalclient
+      
+  spec: 
+    containers: 
+      - name: metalclient
+        image: ghcr.io/droeder/metalclient:v0.0.1
+        # ports: 
+        #   - name: http-port 
+        #     containerPort: 5000
+
