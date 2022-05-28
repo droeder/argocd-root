@@ -10,8 +10,8 @@ spec:
     app: metalclient
  template: 
   metadata:
-    annotations: 
-      prometheus.io/scrape: "true"
+    # annotations: 
+    #   prometheus.io/scrape: "true"
     labels: 
       app: metalclient
       
@@ -19,7 +19,4 @@ spec:
     containers: 
       - name: metalclient
         image: ghcr.io/droeder/metalclient:v0.0.2
-        # ports: 
-        #   - name: http-port 
-        #     containerPort: 5000
 
