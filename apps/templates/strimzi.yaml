@@ -3,16 +3,17 @@ kind: Application
 metadata:
   name: strimzi
   namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: ""
-    namespace: default
     server: "https://kubernetes.default.svc"
+    namespace: default
   source:
+    chart: strimzi-kafka-operator
     path: ""
     repoURL: "https://strimzi.io/charts/"
     targetRevision: 0.29.0
-    chart: strimzi-kafka-operator
   project: default
   syncPolicy:
     automated:
