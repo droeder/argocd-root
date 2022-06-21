@@ -2,14 +2,15 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: strimzi
+  namespace: default
 spec:
   destination:
-    name: ''
+    name: ""
     namespace: default
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
   source:
-    path: ''
-    repoURL: 'https://strimzi.io/charts/'
+    path: ""
+    repoURL: "https://strimzi.io/charts/"
     targetRevision: 0.29.0
     chart: strimzi-kafka-operator
   project: default
