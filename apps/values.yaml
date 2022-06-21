@@ -3,3 +3,6 @@ echo-server:
 
 metalfactory:
   enabled: true  
+
+kafka:
+  enabled: true

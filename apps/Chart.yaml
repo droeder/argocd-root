@@ -6,6 +6,7 @@ dependencies:
 
   - name: echo-server
     condition: echo-server.enabled
-
   - name: metalfactory
     condition: metalfactory.enabled
+  - name: kafka
+    condition: kafka.enabled
