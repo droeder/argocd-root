@@ -1,0 +1,16 @@
+project: default
+source:
+  repoURL: "https://ricardo-aires.github.io/helm-charts/"
+  targetRevision: 0.1.0
+  helm:
+    parameters:
+      - name: kafka.bootstrapServers
+        value: "PLAINTEXT://kafka:9092"
+  chart: kafka-connect
+destination:
+  server: "https://kubernetes.default.svc"
+  namespace: default
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
