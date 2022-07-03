@@ -8,5 +8,9 @@ dependencies:
     condition: echo-server.enabled
   - name: metalfactory
     condition: metalfactory.enabled
+  - name: metalclient
+    condition: metalclient.enabled
   - name: kafka
     condition: kafka.enabled
+  - name: prometheus
+    condition: prometheus.enabled

@@ -1,8 +1,14 @@
 echo-server:
   enabled: false
 
-metalfactory:
-  enabled: true  
-
 kafka:
   enabled: true
+
+metalfactory:
+  enabled: false  
+
+metalclient:
+  enabled: false 
+
+prometheus:
+  enabled: false
