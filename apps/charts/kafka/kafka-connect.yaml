@@ -25,6 +25,10 @@ spec:
     config.storage.replication.factor: -1
     offset.storage.replication.factor: -1
     status.storage.replication.factor: -1
+  logging:
+    type: inline
+    loggers:
+      connect.root.logger.level: "DEBUG"  
   build:
     output:
       type: docker
