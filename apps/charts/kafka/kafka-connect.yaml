@@ -38,7 +38,6 @@ spec:
       # other examples:
       # image: my-registry.io/my-org/my-connect-cluster:latest
       # image: docker.io/droeder/my-connect-cluster/latest
-
       image: droeder/my-connect-cluster:latest
       pushSecret: regcred
     plugins:
