@@ -38,10 +38,10 @@ spec:
       # image name for any other than demo purposes.
       #image: ttl.sh/strimzi-connect-example-3.2.0:24h
       # other examples:
-      image: my-registry.io/my-org/my-connect-cluster:latest
+      # image: my-registry.io/my-org/my-connect-cluster:latest
       # image: docker.io/droeder/my-connect-cluster/latest
-      # image: droeder/my-connect-cluster:latest
-      pushSecret: regcred
+      image: droeder/my-connect-cluster:latest
+      # pushSecret: regcred
     plugins:
       - name: kafka-connect-file
         artifacts:
