@@ -38,9 +38,9 @@ spec:
       # image name for any other than demo purposes.
       #image: ttl.sh/strimzi-connect-example-3.2.0:24h
       # other examples:
-      # image: my-registry.io/my-org/my-connect-cluster:latest
+      image: my-registry.io/my-org/my-connect-cluster:latest
       # image: docker.io/droeder/my-connect-cluster/latest
-      image: droeder/my-connect-cluster:latest
+      # image: droeder/my-connect-cluster:latest
       pushSecret: regcreds
     plugins:
       - name: kafka-connect-file
@@ -49,7 +49,6 @@ spec:
             group: org.apache.kafka
             artifact: connect-file
             version: 3.2.0
-
 
 
 # apiVersion: kafka.strimzi.io/v1beta2
