@@ -41,7 +41,7 @@ spec:
       image: my-registry.io/my-org/my-connect-cluster:latest
       # image: docker.io/droeder/my-connect-cluster/latest
       # image: droeder/my-connect-cluster:latest
-      pushSecret: regcredx
+      pushSecret: regcred
     plugins:
       - name: kafka-connect-file
         artifacts:
