@@ -40,8 +40,8 @@ spec:
       # other examples:
       # image: my-registry.io/my-org/my-connect-cluster:latest
       # image: docker.io/droeder/my-connect-cluster/latest
-      image: droeder/my-connect-clusterx:latest
-      pushSecret: regcred
+      image: droeder/my-connect-cluster:latest
+      pushSecret: regcreds
     plugins:
       - name: kafka-connect-file
         artifacts:
