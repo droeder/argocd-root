@@ -13,6 +13,6 @@ spec:
   class: org.apache.kafka.connect.file.FileStreamSourceConnector
   tasksMax: 3
   config:
-    file: "/opt/kafka/LICENSE"
-    # file: "/tmp/myfile"
+    # file: "/opt/kafka/LICENSE"
+    file: "/tmp/myfile"
     topic: my-topic
