@@ -42,13 +42,13 @@ spec:
       # image: docker.io/droeder/my-connect-cluster/latest
       image: droeder/my-connect-cluster:latest
       pushSecret: regcred
-    plugins:
-      - name: kafka-connect-file
-        artifacts:
-          - type: maven
-            group: org.apache.kafka
-            artifact: connect-file
-            version: 3.2.0
+    # plugins:
+    #   - name: kafka-connect-file
+    #     artifacts:
+    #       - type: maven
+    #         group: org.apache.kafka
+    #         artifact: connect-file
+    #         version: 3.2.0
 
 
 # apiVersion: kafka.strimzi.io/v1beta2
