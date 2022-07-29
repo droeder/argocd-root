@@ -49,6 +49,7 @@ spec:
             url: https://repo1.maven.org/maven2/org/apache/kafka/connect-file/3.2.0/connect-file-3.2.0.jar
             sha512sum: 0c6e47f092e2446498cc26f96490a256fb371cf5bab274ef6b4b2edd0cf9343f1756f4fb237a9ac095cb88fdb472c1f80dda05fd6be4656af76f25cb87964dda
        
+       
         # artifacts:
         #   - type: maven
         #     group: org.apache.kafka
