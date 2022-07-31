@@ -3,6 +3,8 @@ kind: KafkaConnector
 metadata:
   name: my-source-connector
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
   labels:
     # The strimzi.io/cluster label identifies the KafkaConnect instance
     # in which to create this connector. That KafkaConnect instance

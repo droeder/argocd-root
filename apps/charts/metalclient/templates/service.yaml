@@ -3,6 +3,8 @@ kind: Service
 metadata: 
  name: metalclient
  namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
 spec: 
   selector: 
     app: metalclient

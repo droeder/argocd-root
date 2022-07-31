@@ -4,7 +4,7 @@ metadata:
   name: my-kafka-cluster
   namespace: default
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "10"
 spec:
   kafka:
     version: 3.2.0
