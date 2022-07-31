@@ -1,6 +1,3 @@
-echo-server:
-  enabled: false
-
 kafka:
   enabled: true
 
