@@ -1,16 +1,80 @@
-project: default
-source:
-  repoURL: "https://ricardo-aires.github.io/helm-charts/"
-  targetRevision: 0.1.0
-  helm:
-    parameters:
-      - name: kafka.bootstrapServers
-        value: "PLAINTEXT://kafka:9092"
-  chart: kafka-connect
-destination:
-  server: "https://kubernetes.default.svc"
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnect
+metadata:
+  name: my-connect-cluster
   namespace: default
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
+  annotations:
+#  # use-connector-resources configures this KafkaConnect
+#  # to use KafkaConnector resources to avoid
+#  # needing to call the Connect REST API directly
+    strimzi.io/use-connector-resources: "true"
+spec:
+  version: 3.2.0
+  replicas: 1
+  bootstrapServers: my-kafka-cluster-kafka-bootstrap:9092
+  # tls:
+  #   trustedCertificates:
+  #     - secretName: my-cluster-cluster-ca-cert
+  #       certificate: ca.crt
+  config:
+    group.id: connect-cluster
+    offset.storage.topic: connect-cluster-offsets
+    config.storage.topic: connect-cluster-configs
+    status.storage.topic: connect-cluster-status
+    # -1 means it will use the default replication factor configured in the broker
+    config.storage.replication.factor: -1
+    offset.storage.replication.factor: -1
+    status.storage.replication.factor: -1
+    plugin.path: /plugins
+
+  build:
+    output:
+      type: docker
+      # This image will last only for 24 hours and might be overwritten by other users
+      # Strimzi will use this tag to push the image. But it will use the digest to pull
+      # the container image to make sure it pulls exactly the image we just built. So
+      # it should not happen that you pull someone else's container image. However, we
+      # recommend changing this to your own container registry or using a different
+      # image name for any other than demo purposes.
+      #image: ttl.sh/strimzi-connect-example-3.2.0:24h
+      # other examples:
+      # image: my-registry.io/my-org/my-connect-cluster:latest
+      # image: docker.io/droeder/my-connect-cluster/latest
+      image: droeder/my-connect-cluster:latest
+      pushSecret: regcred
+    plugins:
+      - name: kafka-connect-file
+        artifacts:
+          - type: jar
+            url: https://repo1.maven.org/maven2/org/apache/kafka/connect-file/3.2.0/connect-file-3.2.0.jar
+            # sha512sum: 8e17bd5b3dbd00136a3605004464f48626afe49abf8a49511ca2da185a88b1159b50719275604c5a3b0127866bd5d594995780fd390ea4868219cfde4abfa8b4
+            # sha512sum: 0c6e47f092e2446498cc26f96490a256fb371cf5bab274ef6b4b2edd0cf9343f1756f4fb237a9ac095cb88fdb472c1f80dda05fd6be4656af76f25cb87964dda
+       
+
+        # artifacts:
+        #   - type: maven
+        #     group: org.apache.kafka
+        #     artifact: connect-file
+        #     version: 3.2.0
+
+
+# apiVersion: kafka.strimzi.io/v1beta2
+# kind: KafkaConnect
+# metadata:
+#   name: my-connect-cluster
+#   namespace: default
+#   annotations:
+#     strimzi.io/use-connector-resources: "true"
+# spec:
+#   version: 3.2.0
+#   replicas: 1
+#   bootstrapServers: my-kafka-cluster-kafka-bootstrap:9092
+#   config:
+#     group.id: connect-cluster
+#     offset.storage.topic: connect-cluster-offsets
+#     config.storage.topic: connect-cluster-configs
+#     status.storage.topic: connect-cluster-status
+#     # -1 means it will use the default replication factor configured in the broker
+#     config.storage.replication.factor: -1
+#     offset.storage.replication.factor: -1
+#     status.storage.replication.factor: -1
