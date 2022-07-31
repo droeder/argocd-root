@@ -5,7 +5,6 @@ metadata:
   namespace: default
   annotations:
     argocd.argoproj.io/sync-wave: "15"
-  annotations:
 #  # use-connector-resources configures this KafkaConnect
 #  # to use KafkaConnector resources to avoid
 #  # needing to call the Connect REST API directly
